@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#120916">
+  <title>Happy Birthday, Purna ❤️</title>
+  <style>
+    :root{
+      --bg:#09070d; --card:rgba(255,255,255,.075); --line:rgba(255,255,255,.14);
+      --text:#fff8fc; --muted:#d8cbd4; --pink:#ff6fae; --gold:#ffd68a;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; color:var(--text); background:
+      radial-gradient(circle at 20% 10%, rgba(255,92,157,.20), transparent 32%),
+      radial-gradient(circle at 80% 30%, rgba(255,196,110,.13), transparent 28%),
+      linear-gradient(145deg,#09070d,#170c19 55%,#09070d);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:""; position:fixed; inset:0; pointer-events:none; opacity:.15;
+      background-image:radial-gradient(#fff 1px,transparent 1px); background-size:26px 26px;
+      mask-image:linear-gradient(to bottom,black,transparent 80%);
+    }
+    .music-gate{
+      position:fixed; inset:0; z-index:100; display:grid; place-items:center;
+      background:rgba(7,4,10,.86); backdrop-filter:blur(16px); padding:24px;
+    }
+    .gate-card{max-width:420px; width:100%; text-align:center; padding:32px 24px;
+      border:1px solid var(--line); border-radius:28px; background:rgba(25,14,27,.88);
+      box-shadow:0 25px 80px rgba(0,0,0,.45)}
+    .gate-heart{font-size:52px; animation:pulse 1.5s infinite}
+    .gate-card h2{margin:12px 0 8px;font-size:28px}
+    .gate-card p{color:var(--muted);line-height:1.6;margin:0 0 22px}
+    button,.btn{
+      border:0; cursor:pointer; color:#210b18; font-weight:800; font-size:16px;
+      background:linear-gradient(135deg,#ff9dc6,#ffd58c); padding:14px 22px;
+      border-radius:999px; box-shadow:0 10px 30px rgba(255,111,174,.25);
+    }
+    .hero{min-height:100svh; display:grid; place-items:center; padding:28px 18px 50px; position:relative}
+    .wrap{width:min(1040px,100%); margin:auto}
+    .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:42px; align-items:center}
+    .eyebrow{letter-spacing:.22em;text-transform:uppercase;color:#ffb6d3;font-size:12px;font-weight:800}
+    h1{font-family:Georgia,serif; font-size:clamp(52px,9vw,96px); line-height:.9; margin:14px 0 20px}
+    h1 span{color:#ff91bd}
+    .hero p{font-size:clamp(17px,2.2vw,21px); line-height:1.7; color:var(--muted); max-width:600px}
+    .photo-card{position:relative; padding:10px; border-radius:34px; background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,111,174,.12)); transform:rotate(2deg)}
+    .photo-card img{display:block;width:100%;border-radius:26px; aspect-ratio:2/3; object-fit:cover}
+    .sticker{position:absolute; padding:10px 14px; background:#fff7d9;color:#3a202d;border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.3); font-family:cursive; font-weight:700}
+    .s1{left:-25px;top:32px;transform:rotate(-8deg)} .s2{right:-20px;bottom:45px;transform:rotate(7deg)}
+    section{padding:90px 18px}
+    .section-title{text-align:center; font-family:Georgia,serif; font-size:clamp(34px,6vw,58px); margin:0 0 16px}
+    .section-sub{text-align:center;color:var(--muted);max-width:650px;margin:0 auto 38px;line-height:1.7}
+    .glass{border:1px solid var(--line); background:var(--card); backdrop-filter:blur(12px); border-radius:28px; padding:30px}
+    .letter{max-width:800px;margin:auto; font-family:Georgia,serif; font-size:20px; line-height:1.9; color:#fff2f8}
+    .letter .sign{margin-top:24px;color:#ffabc9;font-size:22px}
+    .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:720px;margin:32px auto 0}
+    .time{padding:20px 10px;text-align:center;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.05)}
+    .time strong{display:block;font-size:clamp(28px,5vw,44px)} .time small{color:var(--muted)}
+    .gallery{max-width:600px;margin:auto}
+    .gallery img{width:100%;border-radius:26px;border:1px solid var(--line);box-shadow:0 25px 80px rgba(0,0,0,.3)}
+    .surprise{display:flex;justify-content:center;margin-top:28px}
+    .hidden-message{max-width:680px;margin:28px auto 0;display:none;text-align:center}
+    .hidden-message.show{display:block;animation:rise .7s ease both}
+    footer{text-align:center;padding:55px 18px 80px;color:var(--muted)}
+    .hearts{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+    .heart{position:absolute;bottom:-30px;font-size:20px;animation:float 8s linear forwards;opacity:0}
+    .player{position:fixed;right:18px;bottom:18px;z-index:20;border:1px solid var(--line);background:rgba(20,11,22,.78);
+      backdrop-filter:blur(14px);border-radius:999px;padding:8px 12px;display:flex;align-items:center;gap:10px}
+    .player button{padding:10px 13px;font-size:14px}
+    .player span{font-size:13px;color:var(--muted)}
+    @keyframes pulse{50%{transform:scale(1.08)}} @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @keyframes float{0%{transform:translateY(0) scale(.7);opacity:0}10%{opacity:.75}100%{transform:translateY(-110vh) translateX(80px) scale(1.5);opacity:0}}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr;gap:35px}.hero-copy{text-align:center}.hero p{margin-left:auto;margin-right:auto}.photo-card{max-width:520px;margin:auto}.countdown{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+  <div class="music-gate" id="gate">
+    <div class="gate-card">
+      <div class="gate-heart">❤️</div>
+      <h2>A little surprise for Purna</h2>
+      <p>Tap below to open her birthday page and start the song.</p>
+      <button id="openBtn">Open My Heart ✨</button>
+    </div>
+  </div>
+
+  <div class="hearts" id="hearts"></div>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">16 October • A day made for you</div>
+          <h1>Happy Birthday,<br><span>Purna</span> ❤️</h1>
+          <p>
+            To the girl who makes ordinary moments feel a little more beautiful,
+            a little more peaceful, and a lot more special. Today is all about you.
+          </p>
+          <a class="btn" href="#letter">Read My Letter ↓</a>
+        </div>
+        <div class="photo-card">
+          <img src="assets/purna.jpg" alt="Purna">
+          <div class="sticker s1">same girl,<br>bigger dreams ♡</div>
+          <div class="sticker s2">just a girl<br>figuring it out ♡</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="letter">
+      <div class="wrap">
+        <h2 class="section-title">For My Favorite Person</h2>
+        <p class="section-sub">Some things are too special to fit into a simple “Happy Birthday.”</p>
+        <div class="glass letter">
+          <p>Dear Purna,</p>
+          <p>
+            Happy Birthday to the beautiful soul who deserves every good thing
+            life has to offer. I hope this new year of your life brings you
+            peaceful mornings, genuine smiles, exciting dreams, and countless
+            little moments that make you say, “Life is beautiful.”
+          </p>
+          <p>
+            Keep being the girl with the big dreams, the warm heart, and that
+            smile that can make a normal day feel different. Never forget how
+            special you are and how much your presence can mean to someone.
+          </p>
+          <p>
+            On 16 October, I don't just want to celebrate your birthday.
+            I want to celebrate <em>you</em> — exactly as you are.
+          </p>
+          <div class="sign">With all my love,<br>Someone who is very lucky to have you ❤️</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Until Your Day ✨</h2>
+        <p class="section-sub">The countdown to 16 October 2026.</p>
+        <div class="countdown">
+          <div class="time"><strong id="days">0</strong><small>Days</small></div>
+          <div class="time"><strong id="hours">0</strong><small>Hours</small></div>
+          <div class="time"><strong id="minutes">0</strong><small>Minutes</small></div>
+          <div class="time"><strong id="seconds">0</strong><small>Seconds</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">A Little Memory 💗</h2>
+        <p class="section-sub">One picture, one smile, and a whole lot of reasons to celebrate you.</p>
+        <div class="gallery"><img src="assets/purna.jpg" alt="Purna birthday memory"></div>
+        <div class="surprise"><button id="surpriseBtn">One More Surprise 🎁</button></div>
+        <div class="glass hidden-message" id="secret">
+          <h3>Promise me one thing, Purna…</h3>
+          <p>Keep smiling. Keep dreaming. Keep being you. The world is better with that version of you in it. ❤️</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Made with ❤️ especially for Purna • 16 October 2026</footer>
+
+  <div class="player">
+    <button id="musicBtn">♫ Music</button>
+    <span id="musicState">Playing your song</span>
+  </div>
+  <audio id="music" loop preload="auto">
+    <source src="assets/birthday-song.m4a" type="audio/mp4">
+  </audio>
+
+  <script>
+    const music = document.getElementById('music');
+    const gate = document.getElementById('gate');
+    const musicBtn = document.getElementById('musicBtn');
+    const musicState = document.getElementById('musicState');
+
+    async function startMusic(){
+      try { await music.play(); musicState.textContent='Music is playing ♫'; }
+      catch(e){ musicState.textContent='Tap Music to play'; }
+    }
+    document.getElementById('openBtn').addEventListener('click', async () => {
+      gate.style.display='none';
+      await startMusic();
+    });
+    musicBtn.addEventListener('click', async () => {
+      if(music.paused){ await startMusic(); } else { music.pause(); musicState.textContent='Music paused'; }
+    });
+
+    const target = new Date('2026-10-16T00:00:00');
+    function countdown(){
+      const diff = Math.max(0, target - new Date());
+      document.getElementById('days').textContent = Math.floor(diff/86400000);
+      document.getElementById('hours').textContent = Math.floor(diff/3600000)%24;
+      document.getElementById('minutes').textContent = Math.floor(diff/60000)%60;
+      document.getElementById('seconds').textContent = Math.floor(diff/1000)%60;
+    }
+    countdown(); setInterval(countdown,1000);
+
+    document.getElementById('surpriseBtn').addEventListener('click',()=>{
+      document.getElementById('secret').classList.add('show');
+      document.getElementById('surpriseBtn').textContent='❤️ For Purna';
+      document.getElementById('secret').scrollIntoView({behavior:'smooth',block:'center'});
+    });
+
+    const hearts=document.getElementById('hearts');
+    setInterval(()=>{
+      const h=document.createElement('div');
+      h.className='heart'; h.textContent=['❤️','💕','💗','✨'][Math.floor(Math.random()*4)];
+      h.style.left=Math.random()*100+'vw';
+      h.style.animationDuration=(6+Math.random()*5)+'s';
+      h.style.fontSize=(14+Math.random()*18)+'px';
+      hearts.appendChild(h);
+      setTimeout(()=>h.remove(),11000);
+    },900);
+  </script>
+</body>
+</html>
